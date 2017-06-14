@@ -1,0 +1,51 @@
+<script>
+	function sum(a,b){
+		b=b||0;
+		return a+b;
+	}
+	console.log(sum(9,1));
+	square=function(a){
+		return a*a;
+	}
+	console.log(square(5));
+	
+	
+	test=function(f){
+		return f(0)+f(1)+f(-1);
+	}
+	
+	
+	console.log(test(square));
+	
+	
+	function sayHello(){
+		console.log('hello');
+	}
+	
+	
+	function count(){
+		i=0;
+		return function(){
+			i++;
+			return i;
+		}
+	}
+	
+	function acount(){
+		var i=0;
+		return function(){
+			i++;
+			return i;
+		}
+	}
+	
+	
+	
+	//IIFE  Immediately Invoked Function Expressions
+	var t=(function(){
+		console.log('Hello');
+		return function(){
+		
+		}
+	})();
+</script>
