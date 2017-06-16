@@ -1,0 +1,46 @@
+<script>
+var arr=[1,'hello',null,undefined,[1,2],function(){}];
+
+
+var x=[5,9,6,4,7,1,2,3];
+/*
+for(let i=0;i<x.length;i++){
+	console.log(x[i]);
+}
+*/
+var fun=function(element,index,inputArray){
+	console.log(element);
+}
+x.forEach(fun);
+
+
+
+var t=x.filter(function(element){
+	return element%2==0;
+});
+
+
+
+
+
+var mappedArray=x.map(function(element){	
+	return element%2==0?element*element:element+1;
+});
+
+
+var mappedArray2=x.map(function(element){	
+	return function(){
+		return element*element;
+	}
+});
+
+
+var s=x.some(function(element){
+	return element%10==0;
+});
+
+var e=x.every(function(element){
+	return element>0;
+});
+
+</script>
