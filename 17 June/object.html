@@ -1,0 +1,70 @@
+<script>
+		
+	var students=[
+		{name:'Pqr',roll:4},
+		{name:'Xyz',roll:1},
+		{name:'Mno',roll:5},
+		{name:'abc',roll:7},
+		{name:'rst',roll:3},
+		{name:'Efg',roll:2},
+	];
+	
+	var stu=students.find(function(element){
+		return element.roll==3;
+	});
+
+	var stuIndex=students.findIndex(function(element){
+		return element.roll==10;
+	});
+	console.log(stu);
+	console.log(stuIndex);
+	
+	
+	function sum(a,b){
+		return a+b;
+	}
+	
+	var sa=[5,6]
+	
+	console.log(sum(sa));
+	
+	console.log(sum.apply(null,sa));
+	
+	
+	var x=[4,6,8,3,8,10];
+	
+	//Math.min(4,6,8,3,8,10);
+	//Math.max(4,6,8,3,8,10);
+	
+	
+	console.log(Math.min.apply(null,x));
+	console.log(Math.max.apply(null,x));
+	
+	
+	
+	var Car=function(model,price){
+		this.model=model;
+		this.price=price;
+		
+	}
+	
+	Car.prototype.drive=function(){
+		console.log("We are driving " + this.model);
+	}
+	var c1=new Car('Ford',10000);
+	var c2=new Car('Audi',50000);
+	var c3=new Car('Maruti',52000);
+	
+	
+	var fun=function(a,b){
+		console.log(this.arg1);
+		return a+b;
+	}
+	
+	console.log(fun.apply({arg1:6},[4,5]));
+	
+	
+	function test(a,b=10){
+		return a+b;
+	}
+</script>
