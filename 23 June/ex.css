@@ -1,0 +1,43 @@
+#div1{
+	color:blue;
+}
+div{
+	color:red;
+}
+.c2{
+	font-size:40px;
+}
+.c1{
+	font-size:10px;
+}
+.c1.c2{
+	background:pink;
+}
+input[type]{
+	color:yellow;
+}
+input[type=password]{
+	color:green;
+}
+#mylist>li{
+	font-weight:900;
+}
+
+#mylist span{
+	color:green
+}
+
+#table1,#table1 tr,#table1 td{
+	border:1px solid black;
+	border-collapse:collapse;
+	
+}
+#table1>thead{
+	font-size:20px;
+	color:white;
+	background:black;
+}
+#table1>tbody tr:nth-child(odd){
+	color:black;
+	background:grey;
+}
