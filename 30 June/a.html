@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<span id="display"></span>
+		<script>
+			function showTime(){
+				var display=document.querySelector("#display");
+				display.innerHTML=new Date();
+			}
+			setInterval(showTime,1000);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<input type="number" id="t1" />
+		<input type="number" id="t2" />
+		<button>Add</button>
+		<span></span>
+		<script>
+			var t1=document.querySelector("#t1");
+			var t2=document.querySelector("#t2");
+			var btn=document.querySelector("button");
+			var span=document.querySelector("span");
+			btn.onclick=function(){
+				span.innerHTML=parseFloat(t1.value)+parseFloat(t2.value);
+			}
+		</script>
+	</body>
+</html>

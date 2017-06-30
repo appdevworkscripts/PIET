@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			#myt>thead{
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="myt">
+			<thead>
+				<tr>
+					<th onclick="sortData('name')">Name</th>
+					<th onclick="sortData('roll')">Roll</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<script>
+			var data=[
+				{name:'Xyz',roll:1},
+				{name:'Abc',roll:5},
+				{name:'Efg',roll:7},
+				{name:'Pqr',roll:2},
+				{name:'Mno',roll:9},
+				{name:'Xmn',roll:3}
+			]
+			function sortData(key){
+				data.sort(function(o1,o2){
+					if(o1[key]>o2[key]) return 1;
+					else if(o1[key]<o2[key]) return -1;
+					else return 0;
+				});
+				createTable();
+			}
+			
+			function createTable(){
+			
+				var tableData=document.querySelector('#myt>tbody');
+				tableData.innerHTML='';
+				data.forEach(function(element){
+					tableData.innerHTML+='<tr><td>'+element.name+'</td><td>'+element.roll+'</td></tr>'
+				});
+			}
+			
+			createTable();
+		</script>
+	</body>
+</html>
