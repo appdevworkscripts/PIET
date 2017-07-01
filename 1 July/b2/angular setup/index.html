@@ -1,0 +1,54 @@
+<!doctype html>
+<html  ng-app="myapp">
+	<head>
+		<title>{{myvar}}</title>
+	</head>
+	<body>
+		<h1>Welcome to Angular JS</h1>
+		<div>
+			<span>
+				{{4+5}}
+			</span>
+			
+		</div>
+		<div ng-init="x=5">
+		
+			{{x+y}}
+			<button ng-click="myfun()">Click Me</button>
+		</div>
+		<div>
+			<input ng-model="t1" type="number">
+			<input ng-model="t2" type="number">
+			<button ng-click="testFun()">Add</button>
+			{{result}}
+		</div>
+		<div>
+			<input ng-model="t11" type="number">
+			<input ng-model="t22" type="number">
+			{{t11+t22}}
+			
+		</div>
+		<script src="angular.min.js"></script>
+		<script>
+			var app=angular.module('myapp',[]);
+			var f1=function($rootScope){
+				console.log('Exteral Function');
+				$rootScope.y=99;
+			}
+			app.run(f1);
+			app.run(function($rootScope){
+				console.log('Hello 2');
+				$rootScope.myvar=100;
+				$rootScope.myfun=function(){
+					$rootScope.y=500;
+					$rootScope.myvar="Changed";
+					$rootScope.x=100;
+					console.log($rootScope.t);
+				}
+				$rootScope.testFun=function(){
+					$rootScope.result=$rootScope.t1+$rootScope.t2;
+				}
+			});
+		</script>
+	</body>
+</html>
