@@ -1,0 +1,44 @@
+<!doctype html>
+<html  ng-app="myapp">
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Actrl">
+			<form ng-submit="submitForm()">
+				Name : <input type="text" ng-model="student.name" required /><br />
+				Roll : <input type="number" ng-model="student.roll" required/><br />
+				<button ng-disabled="state==2">Submit</button>
+				<button ng-disabled="state==1
+				">Edit</button>
+			</form>
+			<br />
+			<br />
+			<span ng-show="students.length==0">No students in list</span>
+			<table ng-show="students.length>0">
+				<thead>
+					<tr>
+						<th>Sr. No.</th>
+						<th>Name</th>
+						<th>Roll</th>
+						<th>Delete</th>
+						<th>Edit</th>
+					</tr>
+				</thead>
+				<tbody>					
+					<tr ng-repeat="student in students">
+						<td>{{$index+1}}</td>
+						<td>{{student.name}}</td>
+						<td>{{student.roll}}</td>
+						<td><button ng-click="deleteStudent($index)">Delete</button></td>
+						<td><button ng-click="editStudent(student)">Edit</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<script src="js/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		
+	</body>
+</html>
