@@ -1,0 +1,54 @@
+<script>
+var arr=[4,5,6,7,8];
+console.log(arr.join());
+console.log(arr.join("-"));
+var arr2=[7,8,9];
+var arr3=arr.concat(arr2);
+console.log(arr3);
+console.log(arr.indexOf(7));
+console.log(arr.indexOf(17));
+for(i=0;i<arr.length;i++){
+	console.log(arr[i]);
+}
+
+
+var sayHello=function(){
+	console.log('Hello');
+}
+
+arr.forEach(sayHello);
+
+var t=arr.forEach(function(element,index,inputArray){
+	console.log(element+'-'+index+'-'+inputArray);
+});
+
+console.log(t)
+
+
+var f=arr.filter(function(element,index,inputArray){
+	//console.log(element+'-'+index+'-'+inputArray);
+	return element%2==0;
+});
+
+console.log(f);
+
+
+var m=arr.map(function(element){
+	console.log(element);
+	return element*element;
+});
+
+console.log(m);
+
+
+var s=arr.some(function(element){
+	return element%11==0;
+});
+
+console.log(s);
+var e=arr.every(function(element){
+	return element%2==0;
+});
+
+console.log(e);
+</script>

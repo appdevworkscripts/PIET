@@ -1,0 +1,38 @@
+<!doctype html>
+<html  ng-app="myapp">
+	<head>
+		<title></title>
+	</head>
+	<body>
+	<button ng-click="testClick()">Click Me</button>
+	{{x}}
+		<div ng-controller="Actrl">
+			<button ng-click="myclick()">Click Me</button>
+			<button ng-click="testClick()">Click Me</button>
+			{{x}}
+			
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<input ng-model="x" type="number">
+			<div ng-if="x>100">
+				IF BLOCK
+			</div>
+			<div ng-show="x>100">
+				SHOW BLOCK
+			</div>
+			<div ng-hide="x>100">
+				HIDE BLOCK
+			</div>
+			
+			
+		</div>
+		{{x}}
+		<button ng-click="myclick()">Click Me</button>
+		<script src="js/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		
+	</body>
+</html>

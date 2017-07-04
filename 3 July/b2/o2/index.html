@@ -1,0 +1,41 @@
+<!doctype html>
+<html  ng-app="myapp">
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Actrl">
+			<form ng-submit="submitForm()">
+				Name : <input type="text" ng-model="contact.name" required/><br />
+				Phone : <input type="text" ng-model="contact.phone" required/><br />
+				Gender : <input type="radio" name="gender" ng-model="contact.gender" value="M" required />Male<input name="gender" type="radio" ng-model="contact.gender"  value="F" /> FeMale<br />
+				
+				Adhar Card : <input name="aadhar" ng-if="contact.gender=='M'" type="number" ng-model="contact.aadhar" required /><br />
+				<button >Submit</button>
+				{{contact}} 
+			</form>
+			<div ng-repeat="t in students">
+				{{$index}}-{{t.name}}
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Roll</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="student in students">
+						<td>{{student.name}}</td>
+						<td>{{student.roll}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		
+		<script src="js/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<script>
+	var obj={
+		a:10,
+		b:'Hello',
+		xyz:990,
+		mno:function(){
+			console.log('object fn');
+		},
+		efg:[5,6,7,8],
+		rst:{
+			t:'p',
+			x:'9'
+		}
+	}
+	console.log(obj.a);
+	console.log(obj['b']);
+	obj.mno();
+	obj.efg.forEach(function(element){
+		console.log(element);
+	});
+	obj.b='bye';
+	
+	console.log(obj['b']);
+	obj.c=10000;
+	console.log(obj.c);
+	
+	console.log(obj.rst);
+	
+	delete obj.rst;
+	
+	console.log(obj.rst);
+	
+	var students=[
+		{name:'Pqr',roll:4},
+		{name:'Xyz',roll:1},
+		{name:'Mno',roll:5},
+		{name:'abc',roll:7},
+		{name:'rst',roll:3},
+		{name:'Efg',roll:2},
+	];
+	
+	
+	students.forEach(function(element){
+		console.log(element.roll+' - '+element.name);
+	});
+	
+	
+	var filteredStudents=students.filter(function(element){
+		return element.roll>3;
+	});
+	console.log('-----------------------------');
+	filteredStudents.forEach(function(element){
+		console.log(element.roll+' - '+element.name);
+	});
+	
+	
+	var mappedStudents=students.map(function(element,index){
+		//delete element.roll;
+		//element.newroll=index+1;
+		return element.name;
+	});
+	console.log('-----------------------------');
+	mappedStudents.forEach(function(element){
+		console.log(element);
+	});
+	
+	students.sort(function(obj1,obj2){
+		if(obj1.name.toLowerCase()>obj2.name.toLowerCase()) return 1;
+		else if(obj1.name.toLowerCase()<obj2.name.toLowerCase()) return -1;
+		else return 0;
+	});
+	
+	
+	
+	console.log('-----------------------------');
+	
+	students.forEach(function(element){
+		console.log(element.roll+' - '+element.name);
+	});
+	
+	arr=[1,5,100,51,9]
+	console.log(arr.sort());
+	
+	console.log(arr.sort(function(o1,o2){
+		if(o1>o2)return 1;
+		else if(o1<o2) return -1;
+		else return 0;
+	}));
+	
+</script>

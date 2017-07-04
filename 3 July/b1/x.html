@@ -1,0 +1,73 @@
+<script>
+// IIFE
+//Immediately Invoked Function Expression
+
+(function(){
+	console.log('New Type Function call');
+})()
+
+
+
+function square(a){
+	return a*a;
+}
+
+var newSquare=function(a){
+	return a*a;
+}
+var newSquare=function(a,b){
+	a=a||0;
+	b=b||a;	
+	return a*b;
+}
+
+console.log(newSquare(5,10));
+console.log(newSquare(5,10,40));
+console.log(newSquare(5));
+console.log(newSquare());
+console.log(newSquare);
+
+test=function(a){
+	return a(0)+a(1)+a(-1);
+}
+
+console.log(test(newSquare));
+console.log(test(Math.sin));
+console.log(test(Math.cos));
+console.log(test(function(a){		
+	return a+1;
+}));
+
+
+sayHello=function(){
+	console.log('Hello');
+}
+
+//setTimeout(fn,number)
+setTimeout(sayHello,5000);
+
+setTimeout(function(){
+	console.log('Bye');
+},10000);
+
+
+counter=function(){
+	x=0;
+	return function(){
+		x++;
+		return x;
+	}
+}
+
+counter2=function(){
+	var x=0;
+	return function(){
+		x++;
+		return x;
+	}
+}
+
+
+
+
+</script>
