@@ -1,0 +1,4 @@
+Please upload all your assignments using git.
+1. Create your own repositories.
+2. Add "appdevworkscripts" as a collaborator to your repository. This can be done using settings option available once you have created your repository and added a branch.
+3. Also mail your github link to nadeem.sajjad@zenways.io

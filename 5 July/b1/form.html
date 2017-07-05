@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			.test{
+				color:blue;
+				font-size:40px;
+			}
+			.test2{
+				color:red;
+				font-size:60px;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<input id="num1" type="number">
+			<input id="num2" type="number">
+			<button type="button">Click Me</button>
+			<div id="result"></div>
+		</form>
+		<table id="mytable">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Roll</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<script>
+			var students=[
+				{name:'Pqr',roll:4},
+				{name:'Xyz',roll:1},
+				{name:'Mno',roll:5},
+				{name:'abc',roll:7},
+				{name:'rst',roll:3},
+				{name:'Efg',roll:2},
+			];
+			const button = document.querySelector("button");
+			const num1 = document.querySelector("#num1");
+			const num2 = document.querySelector("#num2");
+			const result = document.querySelector("#result");
+			button.ondblclick=function(){
+				result.innerHTML=parseFloat(num1.value)+parseFloat(num2.value);
+			}
+			const tbody=document.querySelector("#mytable>tbody");
+			students.forEach(function(element){
+				tbody.innerHTML+='<tr><td>'+element.name+'</td><td>'+element.roll+'</td></tr>'
+			});
+			students.push({name:'nadeem',roll:45});
+			tbody.innerHTML='';
+			students.forEach(function(element){
+				tbody.innerHTML+='<tr><td>'+element.name+'</td><td>'+element.roll+'</td></tr>'
+			});
+		</script> 
+	</body>
+</html>

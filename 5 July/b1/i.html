@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			.test{
+				color:blue;
+				font-size:40px;
+			}
+			.test2{
+				color:red;
+				font-size:60px;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<p>Hello</p>
+		<span class="test2">Xyz</span>
+		<script>
+			//document.querySelector("p").innerHTML+='<strong>My Data</strong> Bye';
+			//document.querySelector("p").outerHTML='<span>Bye</span>'
+			document.querySelector("p").setAttribute('class','test');
+			/*
+			setInterval(function(){
+				var val=document.querySelector("p").getAttribute('class');
+				document.querySelector("p").setAttribute('class',val=='test'?'test2':'test');
+				
+			},1000);
+			*/
+			document.querySelector("span").removeAttribute("class");
+		</script>
+	</body>
+</html>
