@@ -1,0 +1,48 @@
+<!doctype html>
+<html  ng-app="myapp">
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<style>
+			input.ng-invalid.ng-touched, .ng-submitted input.ng-invalid{
+				border: 1px solid red;
+			}
+			input.ng-valid.ng-touched{
+				border: 1px solid green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div ng-controller="Actrl" class="col-md-6 col-md-offset-3">
+					<form name="studentForm" ng-submit="studentForm.$valid && submitForm()" novalidate>
+						<div class="form-group">
+							<label>Name</label>
+							<input type="text" name="name" ng-model="student.name" required class="form-control" minlength="5" pattern="^[A-Z].*$" />
+							<span class="help-message" ng-show="studentForm.name.$touched && studentForm.name.$error.required">Name required</span>
+							<span class="help-message" ng-show="studentForm.name.$touched && studentForm.name.$error.minlength">Name should atleast contain 5 letters</span>
+							<span class="help-message" ng-show="studentForm.name.$touched && studentForm.name.$error.pattern">Name should should start with capital letter</span>
+						</div>
+						<div class="form-group">
+							<label>Phone number</label>
+							<input name="phone" type="text" ng-model="student.phno" required minlength="10"maxlength="10" pattern="^[789]\d{9}$" class="form-control" />
+							<span ng-show="studentForm.phone.$touched || studentForm.$submitted" class="help-message" ng-messages="studentForm.phone.$error">
+								<span ng-message="required">Phone number is required</span>
+								<span ng-message="pattern">Should start with 7,8 or 9 and only contain digits.</span>
+								<span ng-message="minlength">Atleast 10 digits are required</span>								
+							</span>
+						</div>
+						<button class="btn btn-success" >Submit</button>
+					</form>		
+					<pre>{{studentForm | json}}</pre>
+				</div>
+			</div>
+		</div>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-messages.min.js"></script>
+		
+		<script src="js/app.js"></script>
+		
+	</body>
+</html>
