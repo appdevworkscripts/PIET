@@ -1,0 +1,59 @@
+[] fixed symbols
+{} limit
+. anything
+^ SOL
+$ EOL
+() groups
+
+* none or many
++ one or many
+? one or none
+
+
+[AQ]
+
+[AB][AB]
+
+AB
+AA
+BA
+BB
+
+[A-Z]
+[a-z]
+[0-9] -> \d
+[A-Z0-9%]
+
+
+[0-9]{10}
+[0-9]{10,}
+[0-9]{10,12}
+^[789][0-9]{9}$
+^[789]\d{9}$
+
+[ABC].{4}
+
+^[ABC][XYZ]
+
+AX
+BX
+MAX
+AXY
+
+AAAPA0000A
+
+MUL09ACS000
+^[M][U][BDL][0-9]{2}[A-E](CS|CV|ME|EC)[0-9]{3}$
+
+CS
+CV
+ME
+EC
+
+
+
+
+^[A-Z].?[.]$
+
+<input pattern='["].*["]'>  ""
+<input pattern="[\"].*[\"]"> 

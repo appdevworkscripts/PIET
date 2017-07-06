@@ -1,0 +1,36 @@
+<!doctype html>
+<!-- ng-app is considered as angular js inbuilt directive -->
+<html ng-app="tapp">
+	<head>
+	</head>
+	<body>
+		<div >
+			<span>{{4+5}}</span>
+		</div>
+		<div>
+			<input ng-model="x" type="number">
+			<input ng-model="y" type="number">
+			
+			{{x+y}}<br />
+			<br /><br />
+			
+			<input ng-model="p" type="number">
+			{{p}}
+			<input ng-model="p" type="number">
+		</div>
+		
+	
+	
+		<script src="angular.min.js"></script>
+		<script>
+			// angular.module(module_name, array of external modules)
+			var app=angular.module('tapp',[]);
+			
+			
+			app.run(function(){
+				console.log('App started');
+				
+			});
+		</script>
+	</body>
+</html> 
