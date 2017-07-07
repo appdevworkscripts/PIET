@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- ng-app is considered as angular js inbuilt directive -->
+<html ng-app="myapp">
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	</head>
+	<body>
+	
+		<my-directive ng-repeat="x in arr"></my-directive>
+		<!--<div 	my-directive ng-repeat="x in arr">hvhvvjbjk</div>-->
+		<div ng-controller="Actrl">
+			<my-test name="Nadeem" my-contact="c1"></my-test>
+			<my-test name="Anshul"></my-test>
+			<my-test name="Suraj"></my-test>
+			<my-test name="Charlie"></my-test>
+			<my-test name="Anchal"></my-test>
+			<div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="opt"></div>
+			
+			{{dt |date}}
+		</div>
+		<script src="js/angular.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/ui-bootstrap.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html> 
