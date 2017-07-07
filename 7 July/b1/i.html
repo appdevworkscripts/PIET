@@ -1,0 +1,35 @@
+<!doctype html>
+<!-- ng-app is considered as angular js inbuilt directive -->
+<html ng-app="tapp">
+	<head>
+	</head>
+	<body>
+		<input ng-model="z" >
+		{{x}} - {{y}} -{{z}}
+		<div ng-controller="ACtrl">
+			<input ng-model="z" >		<br/>
+			{{x}} - {{y}} - {{z}}
+		</div>
+		<div ng-controller="BCtrl">			
+			{{x}} - {{y}} - {{z}}
+		</div>	
+		<script src="js/angular.min.js"></script>
+		<script>
+			// angular.module(module_name, array of external modules)
+			var app=angular.module('tapp',[]);			
+			app.controller('ACtrl',function($scope,$rootScope){
+				$scope.x=100;
+				//$rootScope.y=99;
+			});
+			app.controller('BCtrl',function($scope,$rootScope){
+				$scope.z=300;
+				$rootScope.z=500;
+			});			
+			app.run(function($rootScope){
+				console.log('App started');
+				$rootScope.y=1000;
+				
+			});
+		</script>
+	</body>
+</html> 
