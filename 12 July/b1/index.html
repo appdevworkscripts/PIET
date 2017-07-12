@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="myapp">
+	<head>
+	</head>
+	<body>
+		<div ng-controller="Actrl">
+			<form ng-submit="submitForm()">
+				<input type="number" ng-model="num" >
+				<button>Submit</button>
+				<br />
+				<h4>{{result}}</h4>
+			</form>
+		</div>
+	
+		<script src="js/angular.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
