@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<input type="number" id="num1">
+		<input type="number" id="num2">
+		<br />
+		<button class="calcBtn" onclick="calc('+')">+</button>
+		<button class="calcBtn" onclick="calc('-')">-</button>
+		<button class="calcBtn" onclick="calc('*')">X</button>
+		<button class="calcBtn" onclick="calc('/')">&#xf7;</button>
+		<p></p>
+		
+		<script>
+			const num1=document.querySelector("#num1");
+			const num2=document.querySelector("#num2");
+			const resultPara=document.querySelector("p");
+			function calc(operator){
+				var result=0;
+				switch(operator){
+					case "+":
+						result=parseFloat(num1.value)+parseFloat(num2.value)
+						break;
+					case "-":
+						result=parseFloat(num1.value)-parseFloat(num2.value)
+						break;
+					case "*":
+						result=parseFloat(num1.value)*parseFloat(num2.value)
+						break;
+					case "/":
+						result=parseFloat(num1.value)/parseFloat(num2.value)
+						break;
+				}
+				resultPara.innerHTML=result;
+			}
+		</script>
+	</body>
+</html>

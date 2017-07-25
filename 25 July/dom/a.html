@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+	
+		<p id="x" style="color:blue;">Hello</p>
+	
+	
+	
+		<script>
+			i=0;
+			var colors=['blue','red','green','yellow','cyan']
+			const para=document.querySelector("p");
+			para.innerHTML="Bye";
+			setInterval(function(){
+				i++;
+				sec=i%60;
+				min=parseInt(i/60);
+				min=min%60;
+				hour=min/60;
+				para.innerHTML=min+":"+sec;
+				para.setAttribute('style','color:'+colors[i%5]);
+			},1000);
+		</script>
+	</body>
+</html>
