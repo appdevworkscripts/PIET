@@ -7,7 +7,7 @@ app.run(function($rootScope){
 
 
 
-app.config(function($routeProvider){
+app.config(function($routeProvider,$locationProvider){
 	$routeProvider.when('/',{
 		templateUrl:'view/a.html',
 		controller:'Actrl'
@@ -19,9 +19,9 @@ app.config(function($routeProvider){
 	$routeProvider.when('/c',{
 		templateUrl:'view/c.html',
 		controller:'Cctrl'
-	});]
+	});
 	
-	
+	$locationProvider.html5Mode(true);
 	
 	
 	//localhost:8080/#!/product/760
